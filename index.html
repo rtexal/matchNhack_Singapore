@@ -21,54 +21,82 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
     </head>
     <body>
+	<div align="center">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
+		<div class="row-fluid">
+		<div class="span2"></div>
+		<div class="span8">
+		<h1 style="color:black;">Happiness is ______.</h1>
+		</div>
+		<div class="span2"></div>
+		</div>
 
         <div class="container">
+		<div id="columns">
+			<div class="pin_add">
+				<h1><a href="#ADD" data-toggle="modal" style="text-decoration:none;">+ Add your own</a></h1>
+				<!-- Modal -->
+				<div id="ADD" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-            <!-- Main hero unit for a primary marketing message or call to action -->
-            <div class="hero-unit">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-            </div>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Happiness is...</h3>
 
-            <!-- Example row of columns -->
-            <div class="row">
-				<div class="span3"></div>
-                <div class="span2">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="span2">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-               </div>
-                <div class="span2">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-				</div class="span3"></div>
-            </div>
+				  <div class="modal-body">
+				    <form id="chinab_submit_form" action="backend/submit.php" method="post">
+					<textarea id="textarea" name="chinab_textarea"></textarea><br/><br/>
+					<div class="adding">
+					<label id="lab1" for="1" style="width:40px;height:40px;background-color:#1ABC9C;float:left;"></label>
+					<input type="radio" id="1" name="colour" style="display:none;" value="#1ABC9C">
+					<label id="lab2" for="2" style="width:40px;height:40px;background-color:#2ECC71;float:left;"></label>
+					<input type="radio" id="2" name="colour" style="display:none;" value="#2ECC71">
+					<label id="lab3" for="3" style="width:40px;height:40px;background-color:#3498DB;float:left;"></label>
+					<input type="radio" id="3" name="colour" style="display:none;" value="#3498DB">
+					<label id="lab4" for="4" style="width:40px;height:40px;background-color:#9B59B6;float:left;"></label>
+					<input type="radio" id="4" name="colour" style="display:none;" value="#9B59B6">
+					<label id="lab5" for="5" style="width:40px;height:40px;background-color:#E67E22;float:left;"></label>
+					<input type="radio" id="5" name="colour" style="display:none;" value="#E67E22">
+					<label id="lab6" for="6" style="width:40px;height:40px;background-color:#E74C3C;float:left;"></label>
+					<input type="radio" id="6" name="colour" style="display:none;" value="#E74C3C">	
+					</div>
+				  </div>
+				  <div class="modal-foot">
+					<h3><button id="button_submit" type="submit" style="border:none;background-color:rgba(0, 0, 0, 0);color:grey;"><h3>+ Add</h3>
+				  </div>
+				  </form>
+				</div>
+			</div>
+			<!-- Modal -->
+			<div id="chinab">
+			<div class="pin">
+				<h3>Leggings pour-over banksy, DIY wolf tattooed ... </h3>
+			</div>
+			<div class="pin">
+				<h3>Put a bird on it viral wolf, 3 wolf moon ... </h3>
+			</div>
+			<div class="pin">
+				<h3>Put a bird on it viral wolf, 3 wolf moon ... </h3>
+			</div>
+			</div>
+			<!-- and so on ...  -->
+		</div>
+        </div>
 
             <hr>
 
             <footer>
-                <p>&copy; Company 2012</p>
+                <p>DAFUQ&copy; 2012</p>
             </footer>
 
-        </div> <!-- /container -->
+        <!-- /container -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
@@ -81,5 +109,6 @@
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-    </body>
+    </div>
+	</body>
 </html>

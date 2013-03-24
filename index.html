@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Make happy.</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -21,8 +21,27 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="https://connect.facebook.net/en_US/all.js"></script>
+
+		<script type="text/javascript">
+				
+			$(document).ready(function () {
+				$('#shareonfacebook').click(function (e) {
+					e.preventDefault();
+					FB.ui(
+						{
+							method: 'feed',
+							name: 'Spread your happiness',
+							link: 'http://www.happy.jublia.org',
+							caption: 'Happiness, to me is, '+notee+''
+						});
+				});
+		  });
+		</script>
+		
 		<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
-    </head>
+    
+	</head>
     <body>
 	<div align="center">
         <!--[if lt IE 7]>
@@ -67,31 +86,22 @@
 					</div>
 				  </div>
 				  <div class="modal-foot">
-					<h3><button id="button_submit" type="submit" style="border:none;background-color:rgba(0, 0, 0, 0);color:grey;"><h3>+ Add</h3>
+					<button id="button_submit" type="submit" style="border:none;background-color:rgba(0, 0, 0, 0);color:grey;"><h3 id="add">+ Add</h3>
 				  </div>
 				  </form>
 				</div>
 			</div>
 			<!-- Modal -->
-			<div id="chinab">
-			<div class="pin">
-				<h3>Leggings pour-over banksy, DIY wolf tattooed ... </h3>
-			</div>
-			<div class="pin">
-				<h3>Put a bird on it viral wolf, 3 wolf moon ... </h3>
-			</div>
-			<div class="pin">
-				<h3>Put a bird on it viral wolf, 3 wolf moon ... </h3>
-			</div>
-			</div>
+			<span class="chinab">
+			
+			</span>
 			<!-- and so on ...  -->
 		</div>
         </div>
 
-            <hr>
 
             <footer>
-                <p>DAFUQ&copy; 2012</p>
+                <p>A happy project from matchNhack Singapore 2013</p>
             </footer>
 
         <!-- /container -->
@@ -102,7 +112,11 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
-
+		<script>
+		FB.init({
+		appId : '105133453014831'
+		});
+		</script>
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
